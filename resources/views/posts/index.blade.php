@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>Blog Posts</title>
-</head>
-<body>
-  <div class="container">
+@extends('layouts.default')
+
+@section('title','Blog Posts')
+
+@section('content')
     <h1>Blog Posts</h1>
     <ul>
     @foreach ($posts as $post)
       <li><a href="{{ action('PostsController@show', $post) }}">{{ $post->title }}</a></li>
     @endforeach
     </ul>
-  </div>
-</body>
+@endsection
 </html>
