@@ -19,6 +19,10 @@ New Post
 </p>
 
 <p>
+<input type = "text" name ="image" placeholder = "image">
+</p>
+
+<p>
 <input type = "submit" value = "Add">
 </p>
 
