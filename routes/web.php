@@ -12,4 +12,5 @@
 */
 
 Route::get('/','PostsController@index');
-Route::get('/posts/{post}','PostsController@show');
+Route::get('/posts/{post}','PostsController@show')->where('post', '[0-9]');
+Route::get('/posts/create','PostsController@create');
