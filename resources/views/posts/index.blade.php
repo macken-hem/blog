@@ -9,7 +9,10 @@
     </h1>
     <ul>
     @foreach ($posts as $post)
-      <li><a href="{{ action('PostsController@show', $post) }}">{{ $post->title }}</a></li>
+      <li>
+      <a href="{{ action('PostsController@show', $post) }}">{{ $post->title }}</a>
+      <a href="{{ action('PostsController@edit', $post) }}">edit</a>
+      </li>
     @endforeach
     </ul>
 @endsection

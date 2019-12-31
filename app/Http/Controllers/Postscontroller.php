@@ -22,7 +22,29 @@ class Postscontroller extends Controller
         
     }
     public function store(Request $request) {
+        $this->validate($request, [
+            'title' => 'required|min:1',
+            'body' => 'required'
+        ]);
         $post = new Post();
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->image = $request->image;
+        $post->save();
+        return redirect('/');
+        
+    }
+
+    public function edit(Post $post) {
+        return view('posts.edit',['post' => $post]);
+
+    }
+
+    public function update(Request $request, Post $post) {
+        $this->validate($request, [
+            'title' => 'required|min:1',
+            'body' => 'required'
+        ]);
         $post->title = $request->title;
         $post->body = $request->body;
         $post->image = $request->image;
