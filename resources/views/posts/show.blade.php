@@ -8,4 +8,16 @@
 {{ $post->title }}
 </h1>
 <p>{!! nl2br(e($post->body)) !!}</p>
+
+<h2>comment</h2>
+
+<ul>
+  @forelse ($post->comments as $comment)
+  <li>
+  {{ $comment->body}}
+  </li>
+  @empty
+  <li>No comment yet</li>
+  @endforelse
+</ul>
 @endsection

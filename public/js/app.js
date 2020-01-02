@@ -19259,7 +19259,7 @@ __webpack_require__.r(__webpack_exports__);
       e.preventDefault();
 
       if (confirm('削除してもいいですか？')) {
-        document.getElementById('form_' + this.dataset.id).onsubmit();
+        document.getElementById('form_' + this.dataset.id).submit();
       }
     });
   }
