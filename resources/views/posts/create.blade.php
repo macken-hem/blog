@@ -25,7 +25,7 @@ New Post
 </p>
 
 <p>
-<input type = "file" name ="image" placeholder = "image">
+<input type = "file" name ="image">
 </p>
 
 <p>
