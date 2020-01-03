@@ -24,15 +24,16 @@ New Post
 @endif
 </p>
 
-<p>
-<input type = "file" name ="image">
-</p>
+
 
 <p>
+<div id="app">
+  <image></image>
+</div>
 <input type = "submit" value = "Add">
 </p>
 
 </form>
-
+<script src="{{ asset('/js/app.js') }}"></script>
 
 @endsection
