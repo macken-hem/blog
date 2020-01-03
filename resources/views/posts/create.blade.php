@@ -28,7 +28,7 @@ New Post
 
 <p>
 <div id="app">
-  <image></image>
+  <image-component></image-component>
 </div>
 <input type = "submit" value = "Add">
 </p>
