@@ -7,7 +7,7 @@
 <a href = "{{ url('/') }}" class = "header-menu">BACK</a>
 New Post
 </h1>
-<form method = "post" action = "{{ url('/posts') }}">
+<form method = "post" action = "{{ url('/posts') }}" enctype = "multipart/form-data">
 {{  csrf_field() }}
 
 <p>

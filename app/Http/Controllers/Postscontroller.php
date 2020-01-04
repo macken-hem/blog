@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Http\Requests\PostRequest;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class Postscontroller extends Controller
 {
@@ -23,10 +24,20 @@ class Postscontroller extends Controller
         
     }
     public function store(PostRequest $request) {
+        $request->validate([
+            'image'=>'required|image|mimes:jpg,jpeg,png|max:2000'
+        ]);
+        $file=$request->file('image');
+        $fileName=str_random(20).'.'.$file->getClientOriginalExtension();
+        Image::make($file)->save(public_path('img/'.$fileName));
+        
+
+
         $post = new Post();
         $post->title = $request->title;
         $post->body = $request->body;
         $post->image = $request->image;
+        // $request->file('image')->storeAs('public/avatar');
         $post->save();
         return redirect('/');
         
