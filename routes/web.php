@@ -11,12 +11,16 @@
 |
 */
 
-Route::get('/','PostsController@index');
-Route::get('/posts/{post}','PostsController@show')->where('post', '[0-9]+');
-Route::get('/posts/create','PostsController@create');
+Route::get('/','PostsController@index')->middleware('auth');
+Route::get('/posts/{post}','PostsController@show')->where('post', '[0-9]+')->middleware('auth');
+Route::get('/posts/create','PostsController@create')->middleware('auth');
 Route::post('/posts','PostsController@store');
-Route::get('/posts/{post}/edit','PostsController@edit');
+Route::get('/posts/{post}/edit','PostsController@edit')->middleware('auth');
 Route::patch('/posts/{post}','PostsController@update');
 Route::delete('/posts/{post}', 'PostsController@destroy');
 Route::post('/posts/{post}/comments','CommentsController@store');
 Route::delete('/posts/{post}/comments/{comment}','CommentsController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
