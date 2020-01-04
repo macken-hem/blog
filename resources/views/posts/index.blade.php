@@ -11,7 +11,8 @@
   @forelse ($posts as $post)
   <li>
   <a href="{{ action('PostsController@show', $post) }}">{{ $post->title }}</a>
-  <img src = "{{ $post->image }}">
+  <p>{{ $post->image }}</p>
+  <!-- <img src = "{{ $post->image }}"> -->
     <a href="{{ action('PostsController@edit', $post) }}" class="edit">[Edit]</a>
     <a href="#" class="delete" data-id="{{ $post->id }}">[x]</a>
     <form method="post" action="{{ url('/posts', $post->id) }}" id="form_{{ $post->id }}"　enctype="multipart/form-data">
