@@ -31,8 +31,6 @@ class Postscontroller extends Controller
         $fileName=str_random(20).'.'.$file->getClientOriginalExtension();
         Image::make($file)->save(public_path('img/'.$fileName));
         
-
-
         $post = new Post();
         $post->title = $request->title;
         $post->body = $request->body;

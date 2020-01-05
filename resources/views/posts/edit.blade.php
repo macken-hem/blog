@@ -4,12 +4,19 @@
 
 @section('content')
 <h1>
-<a href = "{{ url('/') }}" class = "header-menu">BACK</a>
-Edit Post
+EDIT
 </h1>
 <form method = "post" action = "{{ url('/posts', $post->id) }}">
 {{  csrf_field() }}
 {{ method_field('patch') }}
+
+<p>
+<div id="app">
+<img src="{{ asset('/public/img/'.$post->image) }}">
+  <image-component></image-component>
+</div>
+</p>
+
 <p>
 <input type = "text" name ="title" placeholder = "title" value = "{{ old('title', $post->title) }}">
 @if ($errors->has('title'))
@@ -24,15 +31,12 @@ Edit Post
 @endif
 </p>
 
-<p>
-<input type = "text" name ="image" placeholder = "image">
-</p>
 
 <p>
 <input type = "submit" value = "Update">
 </p>
 
 </form>
-
+<script src="{{ asset('/js/app.js') }}"></script>
 
 @endsection
