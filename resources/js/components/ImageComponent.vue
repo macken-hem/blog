@@ -1,6 +1,6 @@
 <template>
 <div>
-<img v-show="uploadedImage" :src="uploadedImage"/>
+<img v-show="uploadedImage" :src="uploadedImage" class="img_field"/>
 <input type="file" name = "image" v-on:change="onFileChange">
 </div>
 </template>
@@ -28,3 +28,10 @@ methods: {
 };
 
 </script>
+
+<style scoped>
+.img_field{
+    width: 100px;
+    height: 100px;
+}
+</style>
