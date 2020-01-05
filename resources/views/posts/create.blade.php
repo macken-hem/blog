@@ -3,12 +3,21 @@
 @section('title', 'New Post')
 
 @section('content')
+<div class = "create_title">
 <h1>
-<a href = "{{ url('/') }}" class = "header-menu">BACK</a>
-New Post
+新規投稿
 </h1>
+<!-- <a href = "{{ url('/') }}" class = "header-menu">戻る</a> -->
+</div>
 <form method = "post" action = "{{ url('/posts') }}" enctype = "multipart/form-data">
 {{  csrf_field() }}
+
+<p>
+<div id="app">
+  <image-component></image-component>
+</div>
+</p>
+
 
 <p>
 <input type = "text" name ="title" placeholder = "title" value = "{{ old('title') }}">
@@ -24,14 +33,9 @@ New Post
 @endif
 </p>
 
-
-
-<p>
-<div id="app">
-  <image-component></image-component>
-</div>
 <input type = "submit" value = "Add">
-</p>
+
+
 
 </form>
 <script src="{{ asset('/js/app.js') }}"></script>
