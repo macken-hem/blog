@@ -10,6 +10,7 @@
   <a href="{{ action('PostsController@show', $post) }}">{{ $post->title }}</a>
   <p>{{ $post->image }}</p>
   <img src="{{ asset('/public/img/'.$post->image) }}">
+  <img src="/storage/{{$post->image}}">
   <!-- <img src = "{{ $post->image }}"> -->
     <a href="{{ action('PostsController@edit', $post) }}" class="edit">[Edit]</a>
     <a href="#" class="delete" data-id="{{ $post->id }}">[x]</a>
