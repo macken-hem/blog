@@ -4,9 +4,9 @@
 
 @section('content')
     <h1>
-    <a href = "{{ url('/posts/create') }}" class = "header-menu">NEW</a>
     Blog Posts
     </h1>
+    <a href = "{{ url('/posts/create') }}" class = "header-menu">NEW</a>
     <ul>
   @forelse ($posts as $post)
   <li>
